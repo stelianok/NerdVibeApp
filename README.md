@@ -20,7 +20,7 @@
     <img alt="Repository issues" src="https://img.shields.io/github/issues/stelianok/NerdVibeApp">
   </a>
   
-  <img alt="GitHub" src="https://img.shields.io/github/license/stelianok/NerdVibeApp">
+  
 </p>
 
 <p align="center">
@@ -109,7 +109,7 @@ After your pull request is merged, you can delete your branch
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GENERAL PUBLIC LICENSE Version 3 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
