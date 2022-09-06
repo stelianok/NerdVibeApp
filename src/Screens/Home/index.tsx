@@ -1,12 +1,10 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-const App = () => {
+export default function Home() {
   return (
     <View>
-      <Text>Monke</Text>
+      <Text>Home</Text>
     </View>
   );
-};
-
-export default App;
+}
