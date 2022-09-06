@@ -12,14 +12,15 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const Tab = createMaterialBottomTabNavigator();
 
 import styles from './styles';
+import GlobalStyles from '../../GlobalStyles';
 
 const { labelText, barStyle } = styles;
-
+const { overline } = GlobalStyles;
 interface LabelTextProps {
   text: string;
 }
 function LabelText({ text }: LabelTextProps) {
-  return <Text style={labelText}>{text}</Text>;
+  return <Text style={[labelText, overline]}>{text}</Text>;
 }
 
 export default function MainTabs() {
