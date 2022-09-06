@@ -24,7 +24,7 @@ const GlobalStyles = StyleSheet.create({
   },
   subtitle2: {
     fontFamily: 'Poppins-Medium',
-    fontSize: 0,
+    fontSize: 14,
   },
   bodyFont1: {
     fontFamily: 'Poppins-Regular',
@@ -37,14 +37,16 @@ const GlobalStyles = StyleSheet.create({
   buttonFont: {
     fontFamily: 'Poppins-Medium',
     fontSize: 14,
+    textTransform: 'uppercase',
   },
-  Caption: {
+  caption: {
     fontFamily: 'Poppins-Regular',
     fontSize: 12,
   },
   overline: {
     fontFamily: 'Poppins-Regular',
     fontSize: 10,
+    textTransform: 'uppercase',
   },
 });
 
