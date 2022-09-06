@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from '../Search/styles';
+import styles from './styles';
 
 const { body } = styles;
-export default function Cattegories() {
+export default function Categories() {
   return (
     <View style={body}>
       <Text>Cattegories</Text>
