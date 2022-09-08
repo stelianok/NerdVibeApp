@@ -3,21 +3,23 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
+
+    borderBottomColor: '#DEDEDE',
+    borderBottomWidth: 2,
   },
   logo: {
     paddingTop: 5,
     paddingLeft: 28,
-    flex: 0.71,
+    flex: 0.6,
     color: '#000',
     textAlign: 'right',
   },
   buttonContainer: {
-    marginLeft: 15,
-    flex: 0.29,
+    flex: 0.25,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignContent: 'center',
     flexDirection: 'row',
   },
   button: {
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
 
     borderRadius: 100,
     marginHorizontal: 5,
-    marginVertical: 15,
+    marginVertical: 5,
     padding: 8,
   },
 });

@@ -7,12 +7,12 @@ import GlobalStyles from '../../GlobalStyles';
 import styles from './styles';
 
 const { container, logo, buttonContainer, button } = styles;
-const { h4 } = GlobalStyles;
+const { h5 } = GlobalStyles;
 
 export default function Header() {
   return (
     <View style={container}>
-      <Text style={[logo, h4]}>Nerd Vibes</Text>
+      <Text style={[logo, h5]}>Nerd Vibes</Text>
       <View style={buttonContainer}>
         <BorderlessButton
           style={button}
