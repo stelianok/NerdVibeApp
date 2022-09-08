@@ -5,7 +5,6 @@ import Categories from './Categories';
 import Favorites from './Favorites';
 import Home from './Home';
 import Profile from './Profile';
-import ShoppingCart from './ShoppingCart';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
@@ -61,16 +60,7 @@ export default function MainTabs() {
           ),
         }}
       />
-      <Tab.Screen
-        name="ShoppingCart"
-        component={ShoppingCart}
-        options={{
-          tabBarLabel: <LabelText text={'Cart'} />,
-          tabBarIcon: ({ color }) => (
-            <Icon name="shopping-cart" color={color} size={22} />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="Profile"
         component={Profile}
