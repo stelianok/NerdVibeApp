@@ -1,6 +1,5 @@
 import React from 'react';
-import { FlatList, Image, TouchableOpacity, View } from 'react-native';
-import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
+import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import GlobalStyles from '../../GlobalStyles';
 import Category from './Category';
