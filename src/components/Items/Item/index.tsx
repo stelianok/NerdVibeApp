@@ -24,7 +24,7 @@ interface IProps {
 }
 export default function Item({ imageURL, name, price }: IProps) {
   return (
-    <RectButton style={container}>
+    <RectButton rippleColor={'#DEDEDE'} onPress={() => {}} style={container}>
       <View style={imageContainer}>
         <Image
           source={{
@@ -33,7 +33,10 @@ export default function Item({ imageURL, name, price }: IProps) {
           style={itemImage}
           resizeMode={'cover'}
         />
-        <BorderlessButton style={favoriteButton}>
+        <BorderlessButton
+          rippleColor={'#DEDEDE'}
+          onPress={() => {}}
+          style={favoriteButton}>
           <Icon name={'heart'} size={24} color={'red'} />
         </BorderlessButton>
       </View>
