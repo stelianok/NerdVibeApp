@@ -6,19 +6,23 @@ import styles from './styles';
 const { categoryContainer, imageContainer, categoryImage, categoryTitle } =
   styles;
 
-export default function Category() {
+interface IProps {
+  name: string;
+  imageURL: string;
+}
+export default function Category({ imageURL, name }: IProps) {
   return (
     <View style={categoryContainer}>
       <TouchableOpacity onPress={() => {}} style={imageContainer}>
         <Image
           source={{
-            uri: 'https://2.bp.blogspot.com/-_Cz_Ih4m8iY/Ujc-j5Zcf9I/AAAAAAAABW4/u5P8XM1RWXk/s1600/BB+5140314+Fall+of+WW.png',
+            uri: imageURL,
           }}
           style={categoryImage}
           resizeMode={'cover'}
         />
       </TouchableOpacity>
-      <Text style={[categoryTitle, GlobalStyles.subtitle1]}>Categoria</Text>
+      <Text style={[categoryTitle, GlobalStyles.subtitle1]}>{name}</Text>
     </View>
   );
 }
