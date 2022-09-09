@@ -37,7 +37,7 @@ export default function Item({ imageURL, name, price }: IProps) {
           rippleColor={'#DEDEDE'}
           onPress={() => {}}
           style={favoriteButton}>
-          <Icon name={'heart'} size={24} color={'red'} />
+          <Icon name={'heart'} size={28} color={'red'} />
         </BorderlessButton>
       </View>
       <View style={infoContainer}>
