@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   imageContainer: {
-    width: width / 2.5,
-    height: height / (2.5 * 2),
+    width: width / 2,
+    height: height / (2 * 2),
 
     marginBottom: 5,
   },
@@ -23,8 +23,11 @@ const styles = StyleSheet.create({
   },
   favoriteButton: {
     position: 'absolute',
-    bottom: 1,
-    right: 1,
+    bottom: 0.8,
+    right: 0.8,
+
+    borderRadius: 100,
+    backgroundColor: 'blue',
   },
   infoContainer: {
     justifyContent: 'flex-start',
