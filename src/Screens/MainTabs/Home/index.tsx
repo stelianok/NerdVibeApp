@@ -1,19 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import Header from '../../../components/Header';
-import GlobalStyles from '../../../GlobalStyles';
+import ItemsGrid from '../../../components/Items';
+import Items from '../../../components/ItemsGrid';
 import styles from './styles';
 
-const { container, body, titleBody } = styles;
-const { h3 } = GlobalStyles;
+const { container, body } = styles;
 
 export default function Home() {
   return (
     <View style={container}>
       <Header />
-      <View style={body}>
-        <Text style={[titleBody, h3]}>h3</Text>
-      </View>
+      <ScrollView>
+        <View style={body}>
+          <ItemsGrid />
+          <Items />
+        </View>
+      </ScrollView>
     </View>
   );
 }
