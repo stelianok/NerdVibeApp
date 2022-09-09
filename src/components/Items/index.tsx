@@ -3,6 +3,6 @@ import { View } from 'react-native';
 import styles from './styles';
 
 const { container } = styles;
-export default function ItemsGrid() {
+export default function Items() {
   return <View style={container} />;
 }
