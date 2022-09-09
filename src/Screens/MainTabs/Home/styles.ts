@@ -10,6 +10,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    marginHorizontal: 15,
+    marginVertical: 15,
   },
   titleBody: {
     color: '#000',
