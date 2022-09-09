@@ -1,7 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -21,26 +19,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-  },
-  categoryContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-
-    paddingHorizontal: 10,
-    paddingTop: 15,
-
-    marginBottom: -8,
-  },
-  imageContainer: {
-    width: width / 2.4,
-    height: height / (2.4 * 2),
-  },
-  categoryImage: {
-    width: '100%',
-    height: '100%',
-  },
-  categoryTitle: {
-    marginTop: 5,
   },
 });
 
