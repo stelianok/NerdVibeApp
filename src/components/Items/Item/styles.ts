@@ -21,24 +21,36 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  favoriteButton: {
-    position: 'absolute',
-    bottom: 0.8,
-    right: 0.8,
 
-    borderRadius: 100,
-    backgroundColor: 'blue',
-  },
   infoContainer: {
+    flex: 1,
+    flexDirection: 'row',
+
+    marginBottom: 15,
+    paddingVertical: 5,
+  },
+  infoTextContainer: {
+    flex: 1,
+    width: 150,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
+
   itemName: {
     color: '#000',
   },
   PriceText: {
     color: '#000',
     fontWeight: 'bold',
+  },
+  favoriteButton: {
+    borderRadius: 100,
+
+    justifyContent: 'center',
+
+    padding: 5,
+
+    marginRight: 10,
   },
 });
 

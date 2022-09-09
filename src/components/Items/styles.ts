@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: '#000',
+    marginBottom: 5,
   },
   itemsContainer: {},
   itemsFlatlist: {},

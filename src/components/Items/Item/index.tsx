@@ -11,10 +11,11 @@ const {
   container,
   imageContainer,
   itemImage,
-  favoriteButton,
   infoContainer,
+  infoTextContainer,
   itemName,
   PriceText,
+  favoriteButton,
 } = styles;
 
 interface IProps {
@@ -33,16 +34,28 @@ export default function Item({ imageURL, name, price }: IProps) {
           style={itemImage}
           resizeMode={'cover'}
         />
+      </View>
+      <View style={infoContainer}>
+        <View style={infoTextContainer}>
+          <Text
+            style={[itemName, GlobalStyles.subtitle1]}
+            numberOfLines={2}
+            ellipsizeMode={'tail'}>
+            {name}
+          </Text>
+          <Text
+            numberOfLines={1}
+            ellipsizeMode={'tail'}
+            style={[PriceText, GlobalStyles.subtitle1]}>
+            R$ {price}
+          </Text>
+        </View>
         <BorderlessButton
           rippleColor={'#DEDEDE'}
           onPress={() => {}}
           style={favoriteButton}>
-          <Icon name={'heart'} size={28} color={'red'} />
+          <Icon name={'heart-o'} size={24} color={'black'} />
         </BorderlessButton>
-      </View>
-      <View style={infoContainer}>
-        <Text style={[itemName, GlobalStyles.subtitle1]}>{name}</Text>
-        <Text style={[PriceText, GlobalStyles.subtitle1]}>R$ {price}</Text>
       </View>
     </RectButton>
   );
