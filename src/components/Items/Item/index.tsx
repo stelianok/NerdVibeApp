@@ -9,7 +9,6 @@ import GlobalStyles from '../../../GlobalStyles';
 
 const {
   container,
-  itemsContainer,
   imageContainer,
   itemImage,
   favoriteButton,
@@ -17,24 +16,30 @@ const {
   itemName,
   PriceText,
 } = styles;
-export default function Item() {
+
+interface IProps {
+  imageURL: string;
+  name: string;
+  price: string;
+}
+export default function Item({ imageURL, name, price }: IProps) {
   return (
     <RectButton style={container}>
       <View style={imageContainer}>
         <Image
           source={{
-            uri: 'https://2.bp.blogspot.com/-_Cz_Ih4m8iY/Ujc-j5Zcf9I/AAAAAAAABW4/u5P8XM1RWXk/s1600/BB+5140314+Fall+of+WW.png',
+            uri: imageURL,
           }}
           style={itemImage}
           resizeMode={'cover'}
         />
-        <BorderlessButton>
+        <BorderlessButton style={favoriteButton}>
           <Icon name={'heart'} size={24} color={'red'} />
         </BorderlessButton>
       </View>
       <View style={infoContainer}>
-        <Text style={itemName}>Item</Text>
-        <Text>R$ 27.00</Text>
+        <Text style={[itemName, GlobalStyles.subtitle1]}>{name}</Text>
+        <Text style={[PriceText, GlobalStyles.subtitle1]}>R$ {price}</Text>
       </View>
     </RectButton>
   );

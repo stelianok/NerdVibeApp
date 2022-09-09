@@ -12,12 +12,14 @@ export default function Home() {
   return (
     <View style={container}>
       <Header />
-      <ScrollView>
-        <View style={body}>
+      <View style={body}>
+        <ScrollView>
           <ItemsGrid />
-          <Items />
-        </View>
-      </ScrollView>
+          <Items sectionTitle="Recently Added" />
+          <Items sectionTitle="Popular right now" />
+          <Items sectionTitle="On Sale" />
+        </ScrollView>
+      </View>
     </View>
   );
 }
