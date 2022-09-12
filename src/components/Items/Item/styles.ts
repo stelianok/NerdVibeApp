@@ -39,6 +39,21 @@ const styles = StyleSheet.create({
   itemName: {
     color: '#000',
   },
+
+  priceContainer: {
+    flexDirection: 'row',
+  },
+  priceTextOnSale: {
+    color: '#03B252',
+    fontWeight: 'bold',
+  },
+  priceTextOnSaleDisabled: {
+    color: 'gray',
+    textDecorationLine: 'line-through',
+    textDecorationStyle: 'solid',
+
+    marginRight: 5,
+  },
   PriceText: {
     color: '#000',
     fontWeight: 'bold',

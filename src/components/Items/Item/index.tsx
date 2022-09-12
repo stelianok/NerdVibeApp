@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image, Text, View } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -14,6 +14,9 @@ const {
   infoContainer,
   infoTextContainer,
   itemName,
+  priceContainer,
+  priceTextOnSale,
+  priceTextOnSaleDisabled,
   PriceText,
   favoriteButton,
 } = styles;
@@ -22,8 +25,15 @@ interface IProps {
   imageURL: string;
   name: string;
   price: string;
+  isOnSale: boolean;
 }
-export default function Item({ imageURL, name, price }: IProps) {
+export default function Item({ imageURL, name, price, isOnSale }: IProps) {
+  const [onSale, setOnSale] = useState(true);
+
+  useEffect(() => {
+    setOnSale(isOnSale);
+  }, [isOnSale]);
+
   return (
     <RectButton rippleColor={'#DEDEDE'} onPress={() => {}} style={container}>
       <View style={imageContainer}>
@@ -43,12 +53,25 @@ export default function Item({ imageURL, name, price }: IProps) {
             ellipsizeMode={'tail'}>
             {name}
           </Text>
-          <Text
-            numberOfLines={1}
-            ellipsizeMode={'tail'}
-            style={[PriceText, GlobalStyles.subtitle1]}>
-            R$ {price}
-          </Text>
+          <View style={styles.priceContainer}>
+            <Text
+              numberOfLines={1}
+              ellipsizeMode={'tail'}
+              style={[
+                onSale ? priceTextOnSaleDisabled : PriceText,
+                GlobalStyles.subtitle1,
+              ]}>
+              R$ {price}
+            </Text>
+            {onSale && (
+              <Text
+                numberOfLines={1}
+                ellipsizeMode={'tail'}
+                style={[priceTextOnSale, GlobalStyles.subtitle1]}>
+                R$ {price}
+              </Text>
+            )}
+          </View>
         </View>
         <BorderlessButton
           rippleColor={'#DEDEDE'}
