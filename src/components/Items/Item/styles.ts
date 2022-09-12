@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
 
-    marginBottom: 15,
+    marginBottom: 8,
     paddingVertical: 5,
   },
   infoTextContainer: {
