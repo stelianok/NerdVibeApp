@@ -3,17 +3,9 @@ import { FlatList, Text, View } from 'react-native';
 import GlobalStyles from '../../GlobalStyles';
 import Item from './Item';
 import styles from './styles';
-
 const { container, title, itemsContainer, itemsFlatlist } = styles;
 
-interface Products {
-  imageURL: string;
-  name: string;
-  price: string;
-  isOnSale: boolean;
-}
-
-const data: Products[] = [
+const data: IProduct[] = [
   {
     imageURL:
       'https://cdn.shopify.com/s/files/1/1375/9903/products/threefaces_finalvendetta_blackt-shirt_pl_1_720x720.jpg?v=1657776237',

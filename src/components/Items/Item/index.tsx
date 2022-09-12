@@ -21,12 +21,7 @@ const {
   favoriteButton,
 } = styles;
 
-interface IProps {
-  imageURL: string;
-  name: string;
-  price: string;
-  isOnSale: boolean;
-}
+interface IProps extends IProduct {}
 export default function Item({ imageURL, name, price, isOnSale }: IProps) {
   const [onSale, setOnSale] = useState(true);
 
