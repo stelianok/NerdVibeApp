@@ -53,7 +53,7 @@ export default function Item({ imageURL, name, price, isOnSale }: IProps) {
             ellipsizeMode={'tail'}>
             {name}
           </Text>
-          <View style={styles.priceContainer}>
+          <View style={priceContainer}>
             <Text
               numberOfLines={1}
               ellipsizeMode={'tail'}
