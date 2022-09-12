@@ -1,6 +1,7 @@
 interface IProduct {
   imageURL: string;
   name: string;
-  price: string;
+  price: number;
   isOnSale: boolean;
+  discount?: number;
 }

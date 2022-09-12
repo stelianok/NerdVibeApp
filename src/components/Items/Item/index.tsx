@@ -22,12 +22,24 @@ const {
 } = styles;
 
 interface IProps extends IProduct {}
-export default function Item({ imageURL, name, price, isOnSale }: IProps) {
+export default function Item({
+  imageURL,
+  name,
+  price,
+  isOnSale,
+  discount,
+}: IProps) {
   const [onSale, setOnSale] = useState(true);
+  const [updatedPrice, setUpdatedPrice] = useState(0);
 
   useEffect(() => {
     setOnSale(isOnSale);
-  }, [isOnSale]);
+    if (discount) {
+      setUpdatedPrice(price * discount);
+    } else {
+      setUpdatedPrice(price);
+    }
+  }, [discount, isOnSale, price]);
 
   return (
     <RectButton rippleColor={'#DEDEDE'} onPress={() => {}} style={container}>
@@ -56,14 +68,14 @@ export default function Item({ imageURL, name, price, isOnSale }: IProps) {
                 onSale ? priceTextOnSaleDisabled : PriceText,
                 GlobalStyles.subtitle1,
               ]}>
-              R$ {price}
+              R$ {price.toString()}
             </Text>
             {onSale && (
               <Text
                 numberOfLines={1}
                 ellipsizeMode={'tail'}
                 style={[priceTextOnSale, GlobalStyles.subtitle1]}>
-                R$ {price}
+                R$ {updatedPrice.toString()}
               </Text>
             )}
           </View>

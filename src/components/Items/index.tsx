@@ -23,6 +23,7 @@ export default function Items({ sectionTitle, products }: IProps) {
               name={item.name}
               price={item.price}
               isOnSale={item.isOnSale}
+              discount={item.discount}
             />
           )}
           keyExtractor={item => item.name}
