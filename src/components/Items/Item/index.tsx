@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import styles from './styles';
 import GlobalStyles from '../../../GlobalStyles';
+import { useNavigation } from '@react-navigation/native';
 
 const {
   container,
@@ -33,6 +34,8 @@ export default function Item({
   const [updatedPrice, setUpdatedPrice] = useState(0);
   const [favorite, setFavorite] = useState(false);
 
+  const navigation = useNavigation();
+
   const toggleFavorite = useCallback(() => {
     if (favorite) {
       setFavorite(false);
@@ -51,7 +54,12 @@ export default function Item({
   }, [discount, isOnSale, price]);
 
   return (
-    <RectButton rippleColor={'#DEDEDE'} onPress={() => {}} style={container}>
+    <RectButton
+      rippleColor={'#DEDEDE'}
+      onPress={() => {
+        navigation.navigate('ProductDetailed');
+      }}
+      style={container}>
       <View style={imageContainer}>
         <Image
           source={{
