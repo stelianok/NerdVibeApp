@@ -1,25 +1,45 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Categories from './Categories';
 import Favorites from './Favorites';
 import Home from './Home';
 import Profile from './Profile';
-import ShoppingCart from './ShoppingCart';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Tab = createMaterialBottomTabNavigator();
 
 import styles from './styles';
+import GlobalStyles from '../../GlobalStyles';
+import ShoppingCart from '../ShoppingCart';
+import Search from '../Search';
 
 const { labelText, barStyle } = styles;
+const { overline } = GlobalStyles;
 
 interface LabelTextProps {
   text: string;
 }
 function LabelText({ text }: LabelTextProps) {
-  return <Text style={labelText}>{text}</Text>;
+  return <Text style={[labelText, overline]}>{text}</Text>;
+}
+
+const HomeStack = createNativeStackNavigator();
+
+function HomeStackNavigator() {
+  return (
+    <HomeStack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <HomeStack.Screen name="Home" component={Home} />
+      <HomeStack.Screen name="ShoppingCart" component={ShoppingCart} />
+      <HomeStack.Screen name="Search" component={Search} />
+    </HomeStack.Navigator>
+  );
 }
 
 export default function MainTabs() {
@@ -30,8 +50,8 @@ export default function MainTabs() {
       inactiveColor="#808080"
       barStyle={barStyle}>
       <Tab.Screen
-        name="Home"
-        component={Home}
+        name="HomeTab"
+        component={HomeStackNavigator}
         options={{
           tabBarLabel: <LabelText text={'home'} />,
           tabBarIcon: ({ color }) => (
@@ -60,16 +80,7 @@ export default function MainTabs() {
           ),
         }}
       />
-      <Tab.Screen
-        name="ShoppingCart"
-        component={ShoppingCart}
-        options={{
-          tabBarLabel: <LabelText text={'Cart'} />,
-          tabBarIcon: ({ color }) => (
-            <Icon name="shopping-cart" color={color} size={22} />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="Profile"
         component={Profile}
