@@ -10,6 +10,7 @@ import ShoppingCart from '../../Screens/ShoppingCart';
 import ProductDetailedOverview from '../../Screens/ProductDetailedTopTabs/ProductDetailedOverview';
 
 import styles from './styles';
+import ProductDetailedTopTabs from '../ProductDetailedTopTabs';
 
 const { shoppingCartButton } = styles;
 
@@ -39,11 +40,11 @@ export default function HomeStack() {
       <Stack.Screen name="ShoppingCart" component={ShoppingCart} />
       <Stack.Screen
         name="ProductDetailed"
-        component={ProductDetailedOverview}
+        component={ProductDetailedTopTabs}
         options={{
           headerBackTitleVisible: false,
           headerTitle: '',
-
+          headerShadowVisible: false,
           headerRight: () => ShoppingCartButton(),
         }}
       />
