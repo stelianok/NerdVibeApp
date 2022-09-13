@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     elevation: 10,
   },
+  shoppingCartButton: {
+    padding: 5,
+  },
 });
 
 export default styles;

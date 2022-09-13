@@ -15,8 +15,10 @@ import styles from './styles';
 import GlobalStyles from '../../GlobalStyles';
 import ShoppingCart from '../ShoppingCart';
 import Search from '../Search';
+import ProductDetailed from '../ProductDetailed';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
-const { labelText, barStyle } = styles;
+const { labelText, barStyle, shoppingCartButton } = styles;
 const { overline } = GlobalStyles;
 
 interface LabelTextProps {
@@ -26,17 +28,39 @@ function LabelText({ text }: LabelTextProps) {
   return <Text style={[labelText, overline]}>{text}</Text>;
 }
 
+function ShoppingCartButton() {
+  return (
+    <BorderlessButton
+      rippleColor={'gray'}
+      onPress={() => {}}
+      style={shoppingCartButton}>
+      <Icon name={'shopping-bag'} color={'black'} size={18} />
+    </BorderlessButton>
+  );
+}
 const HomeStack = createNativeStackNavigator();
 
 function HomeStackNavigator() {
   return (
-    <HomeStack.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <HomeStack.Screen name="Home" component={Home} />
+    <HomeStack.Navigator initialRouteName="Home">
+      <HomeStack.Screen
+        name="Home"
+        component={Home}
+        options={{
+          headerShown: false,
+        }}
+      />
       <HomeStack.Screen name="ShoppingCart" component={ShoppingCart} />
+      <HomeStack.Screen
+        name="ProductDetailed"
+        component={ProductDetailed}
+        options={{
+          headerBackTitleVisible: false,
+          headerTitle: '',
+
+          headerRight: () => ShoppingCartButton(),
+        }}
+      />
       <HomeStack.Screen name="Search" component={Search} />
     </HomeStack.Navigator>
   );
