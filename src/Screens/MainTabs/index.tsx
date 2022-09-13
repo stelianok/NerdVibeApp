@@ -50,7 +50,7 @@ export default function MainTabs() {
       inactiveColor="#808080"
       barStyle={barStyle}>
       <Tab.Screen
-        name="Home"
+        name="HomeTab"
         component={HomeStackNavigator}
         options={{
           tabBarLabel: <LabelText text={'home'} />,
