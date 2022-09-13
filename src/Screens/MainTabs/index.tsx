@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Categories from './Categories';
 import Favorites from './Favorites';
 import Home from './Home';
@@ -12,14 +13,33 @@ const Tab = createMaterialBottomTabNavigator();
 
 import styles from './styles';
 import GlobalStyles from '../../GlobalStyles';
+import ShoppingCart from '../ShoppingCart';
+import Search from '../Search';
 
 const { labelText, barStyle } = styles;
 const { overline } = GlobalStyles;
+
 interface LabelTextProps {
   text: string;
 }
 function LabelText({ text }: LabelTextProps) {
   return <Text style={[labelText, overline]}>{text}</Text>;
+}
+
+const HomeStack = createNativeStackNavigator();
+
+function HomeStackNavigator() {
+  return (
+    <HomeStack.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <HomeStack.Screen name="Home" component={Home} />
+      <HomeStack.Screen name="ShoppingCart" component={ShoppingCart} />
+      <HomeStack.Screen name="Search" component={Search} />
+    </HomeStack.Navigator>
+  );
 }
 
 export default function MainTabs() {
@@ -31,7 +51,7 @@ export default function MainTabs() {
       barStyle={barStyle}>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={HomeStackNavigator}
         options={{
           tabBarLabel: <LabelText text={'home'} />,
           tabBarIcon: ({ color }) => (
