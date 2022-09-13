@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Image, Text, View } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -31,6 +31,15 @@ export default function Item({
 }: IProps) {
   const [onSale, setOnSale] = useState(true);
   const [updatedPrice, setUpdatedPrice] = useState(0);
+  const [favorite, setFavorite] = useState(false);
+
+  const toggleFavorite = useCallback(() => {
+    if (favorite) {
+      setFavorite(false);
+    } else {
+      setFavorite(true);
+    }
+  }, [favorite]);
 
   useEffect(() => {
     setOnSale(isOnSale);
@@ -82,9 +91,13 @@ export default function Item({
         </View>
         <BorderlessButton
           rippleColor={'#DEDEDE'}
-          onPress={() => {}}
+          onPress={toggleFavorite}
           style={favoriteButton}>
-          <Icon name={'heart-o'} size={24} color={'black'} />
+          {favorite ? (
+            <Icon name={'heart'} size={28} color={'red'} />
+          ) : (
+            <Icon name={'heart-o'} size={28} color={'black'} />
+          )}
         </BorderlessButton>
       </View>
     </RectButton>
