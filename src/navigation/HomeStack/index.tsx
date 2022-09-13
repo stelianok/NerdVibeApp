@@ -7,7 +7,6 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 import Home from '../../Screens/MainTabs/Home';
 import Search from '../../Screens/Search';
 import ShoppingCart from '../../Screens/ShoppingCart';
-import ProductDetailedOverview from '../../Screens/ProductDetailedTopTabs/ProductDetailedOverview';
 
 import styles from './styles';
 import ProductDetailedTopTabs from '../ProductDetailedTopTabs';
