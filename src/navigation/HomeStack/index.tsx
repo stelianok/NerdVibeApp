@@ -7,7 +7,7 @@ import { BorderlessButton } from 'react-native-gesture-handler';
 import Home from '../../Screens/MainTabs/Home';
 import Search from '../../Screens/Search';
 import ShoppingCart from '../../Screens/ShoppingCart';
-import ProductDetailed from '../../Screens/ProductDetailed';
+import ProductDetailedOverview from '../../Screens/ProductDetailedTopTabs/ProductDetailedOverview';
 
 import styles from './styles';
 
@@ -39,7 +39,7 @@ export default function HomeStack() {
       <Stack.Screen name="ShoppingCart" component={ShoppingCart} />
       <Stack.Screen
         name="ProductDetailed"
-        component={ProductDetailed}
+        component={ProductDetailedOverview}
         options={{
           headerBackTitleVisible: false,
           headerTitle: '',

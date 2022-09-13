@@ -3,10 +3,10 @@ import { View, Text } from 'react-native';
 import styles from './styles';
 
 const { body } = styles;
-export default function ProductDetailed() {
+export default function ProductDetailedDescription() {
   return (
     <View style={body}>
-      <Text>Product Detailed</Text>
+      <Text>Product Detailed Description</Text>
     </View>
   );
 }
