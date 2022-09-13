@@ -2,19 +2,22 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
-
     flex: 1,
+    marginBottom: 5,
   },
-  body: {
-    flex: 1,
+  title: {
+    color: '#000',
+    fontWeight: 'bold',
+  },
+  categoriesContainer: {
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    marginHorizontal: 15,
-    marginVertical: 15,
+    flex: 4,
   },
-  titleBody: {
-    color: '#000',
+  rowContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });
 

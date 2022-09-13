@@ -6,9 +6,11 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   barStyle: {
-    backgroundColor: '#DEDEDE',
+    backgroundColor: '#FFF',
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#000',
+    elevation: 10,
   },
 });
 
