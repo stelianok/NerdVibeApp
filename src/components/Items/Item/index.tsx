@@ -49,7 +49,7 @@ export default function Item({
             uri: imageURL,
           }}
           style={itemImage}
-          resizeMode={'cover'}
+          resizeMode={'contain'}
         />
       </View>
       <View style={infoContainer}>
@@ -68,14 +68,14 @@ export default function Item({
                 onSale ? priceTextOnSaleDisabled : PriceText,
                 GlobalStyles.subtitle1,
               ]}>
-              R$ {price.toString()}
+              $ {price.toFixed(2).toString()}
             </Text>
             {onSale && (
               <Text
                 numberOfLines={1}
                 ellipsizeMode={'tail'}
                 style={[priceTextOnSale, GlobalStyles.subtitle1]}>
-                R$ {updatedPrice.toString()}
+                $ {updatedPrice.toFixed(2).toString()}
               </Text>
             )}
           </View>
