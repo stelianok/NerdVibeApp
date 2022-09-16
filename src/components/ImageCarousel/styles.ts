@@ -5,7 +5,6 @@ const height = Dimensions.get('window').height;
 const styles = StyleSheet.create({
   carouselContainer: {
     margin: 5,
-    marginTop: -25,
     height: height / 1.9,
   },
   imageStyle: {
