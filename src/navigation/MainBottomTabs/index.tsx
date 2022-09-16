@@ -1,20 +1,17 @@
 import React from 'react';
 import { Text } from 'react-native';
+
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Categories from './Categories';
-import Favorites from './Favorites';
-import Home from './Home';
-import Profile from './Profile';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Tab = createMaterialBottomTabNavigator();
+import HomeStack from '../HomeStack';
+import Categories from '../../Screens/MainTabs/Categories';
+import Favorites from '../../Screens/MainTabs/Favorites';
+import Profile from '../../Screens/MainTabs/Profile';
 
 import styles from './styles';
 import GlobalStyles from '../../GlobalStyles';
-import ShoppingCart from '../ShoppingCart';
-import Search from '../Search';
 
 const { labelText, barStyle } = styles;
 const { overline } = GlobalStyles;
@@ -22,25 +19,12 @@ const { overline } = GlobalStyles;
 interface LabelTextProps {
   text: string;
 }
+
 function LabelText({ text }: LabelTextProps) {
   return <Text style={[labelText, overline]}>{text}</Text>;
 }
 
-const HomeStack = createNativeStackNavigator();
-
-function HomeStackNavigator() {
-  return (
-    <HomeStack.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <HomeStack.Screen name="Home" component={Home} />
-      <HomeStack.Screen name="ShoppingCart" component={ShoppingCart} />
-      <HomeStack.Screen name="Search" component={Search} />
-    </HomeStack.Navigator>
-  );
-}
+const Tab = createMaterialBottomTabNavigator();
 
 export default function MainTabs() {
   return (
@@ -51,7 +35,7 @@ export default function MainTabs() {
       barStyle={barStyle}>
       <Tab.Screen
         name="HomeTab"
-        component={HomeStackNavigator}
+        component={HomeStack}
         options={{
           tabBarLabel: <LabelText text={'home'} />,
           tabBarIcon: ({ color }) => (
