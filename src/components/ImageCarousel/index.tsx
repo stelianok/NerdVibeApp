@@ -5,7 +5,6 @@ import Swiper from 'react-native-swiper';
 import styles from './styles';
 
 interface IProductPictures {
-  id: string;
   imageURL: string;
 }
 
@@ -20,7 +19,7 @@ export default function ImageCarousel({ data }: IProps) {
       {data.map(item => {
         return (
           <Image
-            key={item.id}
+            key={item.imageURL}
             source={{ uri: item.imageURL }}
             style={imageStyle}
             resizeMode={'contain'}
