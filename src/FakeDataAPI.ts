@@ -20,7 +20,6 @@ const recentlyAdded: IProduct[] = [
     rating: '4.8',
     description: 'XD',
     hasColorOptions: false,
-
     hasSizeOptions: false,
   },
   {
@@ -36,7 +35,6 @@ const recentlyAdded: IProduct[] = [
     rating: '4.8',
     description: 'XD',
     hasColorOptions: false,
-
     hasSizeOptions: false,
   },
   {
@@ -82,15 +80,15 @@ const popularRightNow: IProduct[] = [
           'https://cdn.shopify.com/s/files/1/1375/9903/products/threefaces_finalvendetta_blackt-shirt_pl_1_720x720.jpg?v=1657776237',
       },
     ],
-    name: 'Camisa Braba',
-    price: 80,
+    name: 'Official Final Vendetta Trio Unisex T-Shirts',
+    price: 17,
     isOnSale: true,
-    discount: 0.85,
+    discount: 0.9,
     rating: '4.8',
     description: 'XD',
     hasColorOptions: false,
-
-    hasSizeOptions: false,
+    hasSizeOptions: true,
+    availableSizes: ['S', 'M', 'L', 'XL'],
   },
   {
     imageArray: [
@@ -115,8 +113,8 @@ const popularRightNow: IProduct[] = [
           'https://cdn.shopify.com/s/files/1/1375/9903/products/jetsetradio_hoodie_4_1024x1024.jpg?v=1657837439',
       },
     ],
-    name: 'Moletom',
-    price: 275,
+    name: 'Official Jet Set Radio Unisex Pullover Hoodies',
+    price: 50.99,
     isOnSale: false,
     discount: 0.8,
     rating: '4.8',
@@ -132,13 +130,12 @@ const popularRightNow: IProduct[] = [
           'https://cdn.shopify.com/s/files/1/1375/9903/products/ns563678stw_1_720x720.jpg?v=1657866244',
       },
     ],
-    name: 'Meia daora',
+    name: 'Official Star Wars Novelty Socks (1 Pair)',
     price: 8,
     isOnSale: false,
     rating: '4.8',
     description: 'XD',
     hasColorOptions: false,
-
     hasSizeOptions: false,
   },
   {
@@ -148,8 +145,8 @@ const popularRightNow: IProduct[] = [
           'https://cdn.shopify.com/s/files/1/1375/9903/products/hd162783spn1_720x720.jpg?v=1657844625',
       },
     ],
-    name: 'Moletom miranha',
-    price: 250,
+    name: 'Official Marvel Spider-Man Kids Double Sleeved Hoodies',
+    price: 38.0,
     isOnSale: true,
     discount: 0.85,
     rating: '4.8',
