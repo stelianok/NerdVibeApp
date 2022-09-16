@@ -7,7 +7,6 @@ interface ISizeOptions {
 }
 
 interface IImageArray {
-  id: string;
   imageURL: string;
 }
 
