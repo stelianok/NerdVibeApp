@@ -60,6 +60,8 @@ const data: IData[] = [
   },
 ];
 
+interface IProps extends IProduct {}
+
 export default function ProductDetailedOverview() {
   return (
     <View style={container}>
