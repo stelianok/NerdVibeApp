@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
   },
-  price: {
+  priceText: {
     color: '#000',
     fontWeight: 'bold',
   },

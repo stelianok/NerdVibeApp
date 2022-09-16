@@ -1,3 +1,4 @@
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 
@@ -13,70 +14,35 @@ const {
   mainInfoContainer,
   rowInfo,
   TitleInfoContainer,
-  price,
+  priceText,
   productTitle,
   reviewContainer,
   reviewIcon,
   reviewText,
 } = styles;
 
-interface IData {
-  id: string;
-  imageURL: string;
-}
-
-const data: IData[] = [
-  {
-    id: '1',
-    imageURL:
-      'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/91d6AcW-krL._SX385_.jpg',
-  },
-  {
-    id: '2',
-    imageURL:
-      'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61B8Lq5NXmL._AC_SY450_.jpg',
-  },
-
-  {
-    id: '3',
-    imageURL:
-      'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/91d6AcW-krL._SX385_.jpg',
-  },
-  {
-    id: '4',
-    imageURL:
-      'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/91d6AcW-krL._SX385_.jpg',
-  },
-  {
-    id: '5',
-    imageURL:
-      'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61B8Lq5NXmL._AC_SY450_.jpg',
-  },
-
-  {
-    id: '6',
-    imageURL:
-      'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/91d6AcW-krL._SX385_.jpg',
-  },
-];
-
 interface IProps extends IProduct {}
 
 export default function ProductDetailedOverview() {
+  const navigation = useNavigation();
+  const route = useRoute();
+  const { product } = route.params;
+
+  const { imageArray, price, name, rating }: IProduct = product;
   return (
     <View style={container}>
       <ScrollView>
         <View style={header}>
-          <ImageCarousel data={data} />
+          <ImageCarousel data={imageArray} />
         </View>
         <View style={body}>
           <View style={mainInfoContainer}>
             <View style={rowInfo}>
               <View style={TitleInfoContainer}>
-                <Text style={[price, GlobalStyles.h5]}>$ 200</Text>
-                <Text style={[productTitle, GlobalStyles.h4]}>
-                  Produto oficial
+                <Text style={[priceText, GlobalStyles.h5]}>
+                  ${price.toString()}
                 </Text>
+                <Text style={[productTitle, GlobalStyles.h4]}>{name}</Text>
               </View>
               <View style={reviewContainer}>
                 <Icon
@@ -85,7 +51,7 @@ export default function ProductDetailedOverview() {
                   size={26}
                   style={reviewIcon}
                 />
-                <Text style={[reviewText, GlobalStyles.h4]}>4.8</Text>
+                <Text style={[reviewText, GlobalStyles.h4]}>{rating}</Text>
               </View>
             </View>
           </View>
