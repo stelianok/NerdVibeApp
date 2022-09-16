@@ -13,6 +13,8 @@ export default function ProductDetailedTopTabs() {
   return (
     <Tab.Navigator
       screenOptions={{
+        tabBarScrollEnabled: false,
+        swipeEnabled: false,
         tabBarLabelStyle: [GlobalStyles.buttonFont, { color: '#000' }],
         tabBarStyle: {},
         tabBarItemStyle: {
