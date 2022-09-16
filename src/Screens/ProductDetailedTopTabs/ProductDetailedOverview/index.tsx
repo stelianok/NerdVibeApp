@@ -1,6 +1,7 @@
-import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
+
 import { View, Text, ScrollView } from 'react-native';
+import { useRoute, RouteProp } from '@react-navigation/native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ImageCarousel from '../../../components/ImageCarousel';
@@ -24,8 +25,9 @@ const {
 interface IProps extends IProduct {}
 
 export default function ProductDetailedOverview() {
-  const navigation = useNavigation();
-  const route = useRoute();
+  const route: RouteProp<{ params: { product: IProduct } }, 'params'> =
+    useRoute();
+
   const { product } = route.params;
 
   const { imageArray, price, name, rating }: IProduct = product;
