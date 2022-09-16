@@ -2,10 +2,6 @@ interface IAvailableColors {
   colorHex: string;
 }
 
-interface ISizeOptions {
-  size: string;
-}
-
 interface IImageArray {
   imageURL: string;
 }
@@ -21,5 +17,5 @@ interface IProduct {
   hasColorOptions: boolean;
   availableColors?: IAvailableColors[];
   hasSizeOptions: boolean;
-  availableSizes?: ISizeOptions[];
+  availableSizes?: string[];
 }

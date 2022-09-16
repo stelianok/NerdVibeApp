@@ -7,7 +7,11 @@ const recentlyAdded: IProduct[] = [
       },
       {
         imageURL:
-          'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/91d6AcW-krL._SX385_.jpg',
+          'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81XmbJHYW-L._SX522_.jpg',
+      },
+      {
+        imageURL:
+          'https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/81CvOd4ZglL._SX522_.jpg',
       },
     ],
     name: 'Elden Ring Collector Edition (PS4)',
@@ -94,6 +98,22 @@ const popularRightNow: IProduct[] = [
         imageURL:
           'https://cdn.shopify.com/s/files/1/1375/9903/products/jetsetradio_hoodie_1_1024x1024.jpg?v=1657837433',
       },
+      {
+        imageURL:
+          'https://cdn.shopify.com/s/files/1/1375/9903/products/jetsetradio_hoodie_5_1024x1024.jpg?v=1657670568',
+      },
+      {
+        imageURL:
+          'https://cdn.shopify.com/s/files/1/1375/9903/products/jetsetradio_hoodie_2_1024x1024.jpg?v=1657837436',
+      },
+      {
+        imageURL:
+          'https://cdn.shopify.com/s/files/1/1375/9903/products/jetsetradio_hoodie_3_1024x1024.jpg?v=1657670565',
+      },
+      {
+        imageURL:
+          'https://cdn.shopify.com/s/files/1/1375/9903/products/jetsetradio_hoodie_4_1024x1024.jpg?v=1657837439',
+      },
     ],
     name: 'Moletom',
     price: 275,
@@ -102,8 +122,8 @@ const popularRightNow: IProduct[] = [
     rating: '4.8',
     description: 'XD',
     hasColorOptions: false,
-
-    hasSizeOptions: false,
+    hasSizeOptions: true,
+    availableSizes: ['S', 'M', 'L', 'XL'],
   },
   {
     imageArray: [
