@@ -17,15 +17,7 @@ export default function Items({ sectionTitle, products }: IProps) {
         <FlatList
           horizontal
           data={products}
-          renderItem={({ item }) => (
-            <Item
-              imageURL={item.imageURL}
-              name={item.name}
-              price={item.price}
-              isOnSale={item.isOnSale}
-              discount={item.discount}
-            />
-          )}
+          renderItem={({ item }) => <Item product={item} />}
           keyExtractor={item => item.name}
           style={itemsFlatlist}
         />

@@ -1,9 +1,10 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 
-import MainTabs from './Screens/MainTabs';
 import { StatusBar } from 'react-native';
+import MainTabs from './navigation/MainBottomTabs';
 
 const App = () => {
   return (
