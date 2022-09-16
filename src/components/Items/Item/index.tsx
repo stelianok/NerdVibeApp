@@ -55,7 +55,10 @@ export default function Item({ product }: IProps) {
     <RectButton
       rippleColor={'#DEDEDE'}
       onPress={() => {
-        navigation.navigate('ProductDetailed');
+        navigation.navigate('ProductDetailed', {
+          screen: 'Overview',
+          params: { product: product },
+        });
       }}
       style={container}>
       <View style={imageContainer}>
