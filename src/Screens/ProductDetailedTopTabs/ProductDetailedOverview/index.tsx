@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text, Image, Dimensions, ScrollView } from 'react-native';
-
-import Swiper from 'react-native-swiper';
+import { View, Text, ScrollView } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ImageCarousel from '../../../components/ImageCarousel';
 import GlobalStyles from '../../../GlobalStyles';
 import styles from './styles';
 
@@ -11,8 +10,6 @@ const {
   container,
   header,
   body,
-  carouselContainer,
-  imageStyle,
   mainInfoContainer,
   rowInfo,
   TitleInfoContainer,
@@ -27,6 +24,7 @@ interface IData {
   id: string;
   imageURL: string;
 }
+
 const data: IData[] = [
   {
     id: '1',
@@ -67,28 +65,7 @@ export default function ProductDetailedOverview() {
     <View style={container}>
       <ScrollView>
         <View style={header}>
-          <Swiper containerStyle={carouselContainer}>
-            <Image
-              source={{ uri: data[0].imageURL }}
-              style={imageStyle}
-              resizeMode={'contain'}
-            />
-            <Image
-              source={{ uri: data[1].imageURL }}
-              style={imageStyle}
-              resizeMode={'contain'}
-            />
-            <Image
-              source={{ uri: data[2].imageURL }}
-              style={imageStyle}
-              resizeMode={'contain'}
-            />
-            <Image
-              source={{ uri: data[3].imageURL }}
-              style={imageStyle}
-              resizeMode={'contain'}
-            />
-          </Swiper>
+          <ImageCarousel data={data} />
         </View>
         <View style={body}>
           <View style={mainInfoContainer}>
@@ -102,8 +79,8 @@ export default function ProductDetailedOverview() {
               <View style={reviewContainer}>
                 <Icon
                   name={'star'}
-                  color={'yellow'}
-                  size={32}
+                  color={'#f3994a'}
+                  size={26}
                   style={reviewIcon}
                 />
                 <Text style={[reviewText, GlobalStyles.h4]}>4.8</Text>

@@ -14,16 +14,6 @@ const styles = StyleSheet.create({
   body: {
     margin: 15,
   },
-  carouselContainer: {
-    margin: 5,
-    marginTop: -25,
-    height: height / 1.9,
-  },
-  imageStyle: {
-    width: '100%',
-    height: '100%',
-    alignSelf: 'center',
-  },
   mainInfoContainer: {},
   rowInfo: {
     flexDirection: 'row',
