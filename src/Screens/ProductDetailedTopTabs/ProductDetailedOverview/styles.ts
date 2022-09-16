@@ -1,6 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
-
-const height = Dimensions.get('window').height;
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,7 +22,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   price: {
-    color: '#03B252',
+    color: '#000',
     fontWeight: 'bold',
   },
   productTitle: {
@@ -36,7 +34,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   reviewIcon: {
-    marginBottom: 15,
+    marginBottom: 19,
+    marginRight: 4,
   },
   reviewText: {
     color: '#000',
